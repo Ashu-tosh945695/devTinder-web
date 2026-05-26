@@ -16,12 +16,12 @@ const Login = ()=>{
           const res = await axios.post(BASE_URL+"/login", {
             emailId, password
           },{withCredentials:true});
-          console.log(res.data)
-          dispatch(addUser(res.data))``
+          
+          dispatch(addUser(res.data))
           return navigate("/")
         }catch(err){
             setError(err?.response?.data|| "something went Wrong")
-            console.err(err)
+            console.error(err)
         }
     }
     return (
